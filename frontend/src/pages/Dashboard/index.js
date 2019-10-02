@@ -25,9 +25,7 @@ function Dashboard() {
           <li key={spot._id}>
             <header
               style={{
-                backgroundImage: `url(${spot.thumbnail_url
-                  .replace(/\(/g, '')
-                  .replace(/\)/g, '')})`,
+                backgroundImage: `url(${spot.thumbnail_url})`,
               }}
             ></header>
             <strong>{spot.company}</strong>

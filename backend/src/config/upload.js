@@ -18,7 +18,7 @@ module.exports = {
       callback(
         null,
         file.originalname
-          .replace(/ /g, '_')
+          .replace(/[^\w\s]/gi, '') // Remove all special characters
           .replace(ext, '-' + Date.now() + ext),
       );
     },
