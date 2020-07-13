@@ -1,6 +1,7 @@
 const express = require('express');
 const multer = require('multer');
 const uploadConfig = require('./config/upload');
+const ApprovalController = require('./controllers/ApprovalController');
 const BookingController = require('./controllers/BookingController');
 const DashboardController = require('./controllers/DashboardController');
 const SessionController = require('./controllers/SessionController');
@@ -8,6 +9,8 @@ const SpotController = require('./controllers/SpotController');
 
 const routes = express.Router();
 const upload = multer(uploadConfig);
+
+routes.post('/bookings/:booking_id/:status', ApprovalController.store);
 
 routes.post('/spots/:spot_id/bookings', BookingController.store);
 
